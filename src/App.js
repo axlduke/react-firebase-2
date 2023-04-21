@@ -1,12 +1,14 @@
 import './App.css';
+import Sidebar from './components/Sidebar';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
 function App() {
   return (
-    <>
-      <div className='text-green-500'>
-        hello
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Sidebar/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
