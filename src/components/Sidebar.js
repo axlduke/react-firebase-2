@@ -7,8 +7,8 @@ import { FaUsers, FaUserGraduate } from 'react-icons/fa'
 import classNames from 'classnames'
 
 const links = [
-    { name: 'Home', icon: <HiOutlineHome />, link: '/home' },
-    { name: 'Students List', icon: <FaUsers />, link: '/Student' },
+    { name: 'Home', icon: <HiOutlineHome />, link: '/' },
+    { name: 'Students List', icon: <FaUsers />, link: '/student_list' },
     { name: 'Faculty List', icon: <FaUserGraduate />, link: '/faculty' },
     { name: 'New & Events', icon: <BsNewspaper />, link: '/new' },
 ];
@@ -18,7 +18,7 @@ const Sidebar = () => {
     const [activeLink, setActiveLink] = useState('/home')
 
     return (
-        <div className='bg-gray-800 w-64 h-screen'>
+        <div className='absolute bg-gray-800 w-64 h-screen'>
             <div className='py-5 ml-5 text-lg font-bold text-[#7551FF]'>
                 Oas South Central School
             </div>
