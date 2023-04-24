@@ -1,12 +1,12 @@
 import React, { useState, useEffect} from 'react'
-import './Style.css'
-import Sidebar from './Sidebar'
-import { db } from '../firebase'
+import '../../components/Style.css'
+import Sidebar from '../Sidebar'
+import { db } from '../../firebase'
 import { DataGrid } from "@mui/x-data-grid"
 import { collection,  onSnapshot } from 'firebase/firestore'
-import { studentColumns } from './Data'
+import { studentColumns } from '../Data'
 
-const Student = () => {
+const ViewNews = () => {
 
     const [ data, setData ] = useState([])
     useEffect(() => {
@@ -49,4 +49,4 @@ const Student = () => {
     )
 }
 
-export default Student
+export default ViewNews

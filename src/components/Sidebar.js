@@ -9,13 +9,13 @@ import classNames from 'classnames'
 const links = [
     { name: 'Home', icon: <HiOutlineHome />, link: '/' },
     { name: 'Students List', icon: <FaUsers />, link: '/student_list' },
-    { name: 'Faculty List', icon: <FaUserGraduate />, link: '/faculty' },
-    { name: 'New & Events', icon: <BsNewspaper />, link: '/new' },
+    { name: 'Faculty List', icon: <FaUserGraduate />, link: '/faculty_list' },
+    { name: 'New & Events', icon: <BsNewspaper />, link: '/annoucement_list' },
 ];
 
 const Sidebar = () => {
 
-    const [activeLink, setActiveLink] = useState('/home')
+    const [activeLink, setActiveLink] = useState('/')
 
     return (
         <div className='absolute bg-gray-800 w-64 h-screen'>
@@ -24,7 +24,7 @@ const Sidebar = () => {
             </div>
             <div className='flex flex-col'>
                 {links.map((item, index) => (
-                    <Link key={index} to={item.link} className={classNames('flex items-center text-white pl-5 py-3', { 'bg-gray-700 border-r-8 border-[#7551FF] text-[#886aff]': activeLink === item.link,})}>
+                    <Link key={index} to={item.link} className={classNames('flex items-center text-white pl-5 py-3', { 'bg-gray-700 border-r-8 border-[#7551FF] text-[#886aff]': setActiveLink === item.link,})} >
                         <span className="mr-3">{item.icon}</span>
                         <span>{item.name}</span>
                     </Link>

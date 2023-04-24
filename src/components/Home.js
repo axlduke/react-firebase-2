@@ -1,12 +1,15 @@
 import React from 'react'
 import Sidebar from './Sidebar'
-
 import wall from '../assets/wall.jpg'
 
 const Home = () => {
+
+    // const [activeLink, setActiveLink] = useState('/student_list')
+    // const links = [] // define your links array here
+    // const onLinkClick = () => {}
     return (
         <div className='bg-gray-100 w-screen h-screen'>
-            <Sidebar />
+            <Sidebar/>
             <div className='absolute left-64 top-5 mx-5'>
                 <div className='flex flex-col w-[1060px]'>
                     <div>
