@@ -5,6 +5,7 @@ import { db } from '../firebase'
 import { DataGrid } from "@mui/x-data-grid"
 import { collection,  onSnapshot } from 'firebase/firestore'
 import { studentColumns } from './Data'
+import { Link } from 'react-router-dom'
 
 const Student = () => {
 
@@ -25,6 +26,24 @@ const Student = () => {
             unsub()
         }
     },[])
+
+    const actionColumn = [
+        {
+            field: "action",
+            headerName: "Action",
+            width: 100,
+            renderCell: (params) => {
+                return (
+                <div className="cellAction">
+                    <Link to={`/view/view_information`} style={{ textDecoration: "none" }}>
+                    {/* <Link to={`/view/view_information/${params.id}`} style={{ textDecoration: "none" }}> */}
+                        <div className="viewButton">View</div>
+                    </Link>
+                </div>
+                );
+            },
+        },
+    ];
     return (
         <div className='bg-gray-100 w-screen h-screen'>
             <Sidebar />
@@ -37,7 +56,7 @@ const Student = () => {
                         <DataGrid
                             className="datagrid shadow-md"
                             rows={data}
-                            columns={studentColumns}
+                            columns={studentColumns.concat(actionColumn)}
                             pageSize={9}
                             rowsPerPageOptions={[9]}
                             checkboxSelection

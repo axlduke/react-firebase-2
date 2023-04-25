@@ -58,7 +58,7 @@ export const userColumns = [
 ];
 
 export const studentColumns = [
-    // { field: "id", headerName: "ID", width: 100 },
+    { field: "id", headerName: "ID", width: 100 },
         {
         field: "name",
         headerName: "Full Name",
